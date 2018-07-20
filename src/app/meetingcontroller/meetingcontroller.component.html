@@ -1,0 +1,48 @@
+<div class="container ">
+
+  <div class="row" style="text-align:left">
+      <div class="col-md-2" ></div>
+      <div class="col-md-8 col-xs-12 form-container">
+          <form #meetingAddForm="ngForm" (ngSubmit)="addMeeting()">
+
+              
+              <div class="form-group">
+                  <label>Meeting By</label>
+                  <p>{{adminName}}</p>
+              </div>
+
+             
+
+              <div class="form-group">
+                  <label>Where</label>
+                  <input type="text" name="where" [(ngModel)]="where" #wh="ngModel" class="form-control" placeholder="Enter Location."
+                      required>
+              </div>
+
+              
+              <div class="form-group">
+                  <label>Purpose</label>
+                  <input type="text" name="pupose" [(ngModel)]="purpose" #pur="ngModel" class="form-control" placeholder="Enter Purpose."
+                      required>
+              </div>
+
+
+              <div class="form-group"  type="text"
+              mwlFlatpickr
+              name = "date"
+             
+              
+              [(ngModel)]="date">
+                  <label>Select Date and time</label>
+                  
+                  
+              </div>
+             
+
+              <button type="submit" class="btn btn-primary" [disabled]="!meetingAddForm.form.valid">Add Meeting</button>
+
+          </form>
+      </div>
+      <div class="col-md-2" ></div>
+  </div>
+</div>
